@@ -66,9 +66,19 @@ def file():
 
 def Click_on(event=None):
     global index
-    name_temp = files[index+1]
-    name_str = os.path.splitext(name_temp)[0]
-    extension = os.path.splitext(name_temp)[1]
+    file0 = files[index]
+    file1 = files[index+1]
+    name_str0 = os.path.splitext(file0)[0]
+    extension0 = os.path.splitext(file0)[1]
+    name_str1 = os.path.splitext(file1)[0]
+    extension1 = os.path.splitext(file1)[1]
+    file_query = file0 if len(name_str0) < len(name_str1) else file1
+    name_query = name_str0 if len(name_str0) < len(name_str1) else name_str1
+    name_gallery = name_str1 if len(name_str0) < len(name_str1) else name_str0
+    extention_query = extension0 if len(name_str0) < len(name_str1) else extension1
+    extention_gallery = extension1 if len(name_str0) < len(name_str1) else extension0
+
+    name_str = os.path.splitext(name_gallery)[0]
     name_splt = name_str.split("_")
     print(name_splt)
     q_id = name_splt[0]
@@ -79,7 +89,7 @@ def Click_on(event=None):
     print(input_path + files[index])
     if not os.path.exists(save_path):
         os.makedirs(save_path)
-    shutil.copy(input_path + files[index],save_path+q_id+extension)
+    shutil.copy(input_path+file_query,save_path+q_id+extention_query)
 
     index += 2
     if index <= size - 1:
