@@ -31,3 +31,12 @@ labeling_tools
 ```
 
 classes.txt is the classes you defined for labeling. predefined_classes.txt should be consistant with classes.txt.
+
+## Getting Started on Windows
+
+1. Download [Python](https://www.python.org/downloads/) and run the installer
+1. When the installer launches, select the checkbox **Add Python 3.8 to PATH** on the bottom and hit **Install Now**
+1. After the installation completes, there may be an option to **Disable path length limit**. Enable this option if it appears
+1. In the Windows start menu, search for `Powershell` and run it
+1. Type in the command `pip install Pillow` and press enter. This will install the image library that the application requires
+1. Once Pillow is installed, open the folder containing the labeling scripts. Double-click [labeler_result_analysis.py](./labeler_result_analysis.py) and open the file with Python. The application should now appear
